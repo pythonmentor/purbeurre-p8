@@ -9,5 +9,7 @@ verify_ssl = true
 django = "*"
 requests = "*"
 python-dotenv = "*"
+django-extensions = "*"
+django-crispy-forms = "*"
 
 [requires]
