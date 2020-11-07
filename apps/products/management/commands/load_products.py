@@ -4,6 +4,7 @@ from django.conf import settings
 from apiclients.clients import OpenfoodfactsClient
 from apiclients.validators import ProductValidator
 from apiclients.normalizers import ProductNormalizer
+from products.models import Product
 
 
 
@@ -24,3 +25,5 @@ class Command(BaseCommand):
         products = validator.filter(products)
         # Normaliser les données reçues
         normalizer.normalize_all(products)
+
+        Product.objects.create_from_openfoodfacts(products)

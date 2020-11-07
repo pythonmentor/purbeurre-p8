@@ -10,7 +10,7 @@ class Product(models.Model):
     name = models.CharField('product name', max_length=200)
     url = models.CharField('openfoodfacts url', max_length=255)
     nutriscore = models.CharField('product nutriscore', max_length=1)
-    description = models.TextField
+    description = models.TextField('product description')
     image_url = models.CharField('product image url', max_length=255)
     image_nutrition_url = models.CharField(
         'product nutrition image url', max_length=255
