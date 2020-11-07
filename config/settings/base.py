@@ -51,6 +51,7 @@ LOCAL_APPS = [
     'products.apps.ProductsConfig',
     'profiles.apps.ProfilesConfig',
     'users.apps.UsersConfig',
+    'categories.apps.CategoriesConfig',
 ]
 
 INSTALLED_APPS = DJANGO_INSTALLED_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -137,5 +138,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR / 'apps' / '_static')]
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
-MEDIA_URL = 'media'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR / 'media')
+
+# Configuration for products
+PRODUCT_CLIENT_PAGE_SIZE = 1000
+PRODUCT_CLIENT_NUMBER_OF_PAGES = 4
