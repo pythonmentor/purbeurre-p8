@@ -7,7 +7,6 @@ from apiclients.normalizers import ProductNormalizer
 from products.models import Product
 
 
-
 class Command(BaseCommand):
     help = 'Downloads product data from the openfoodfacts API'
 
@@ -17,6 +16,9 @@ class Command(BaseCommand):
         normalizer = ProductNormalizer()
 
         # Télécharger les données depuis openfoodfacts
+        self.stdout.write(
+            self.style.SUCCESS('Downloading products from openfoodfacts...')
+        )
         products = client.get_products_by_popularity(
             page_size=settings.PRODUCT_CLIENT_PAGE_SIZE,
             number_of_pages=settings.PRODUCT_CLIENT_NUMBER_OF_PAGES,

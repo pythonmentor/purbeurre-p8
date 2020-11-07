@@ -17,5 +17,5 @@ class ProductManager(models.Manager):
 
             # Création des catégories et association avec le produit
             for category_name in categories:
-                category = Category.objects.create(name=category_name)
+                category, _ = Category.objects.get_or_create(name=category_name)
                 product.categories.add(category)
