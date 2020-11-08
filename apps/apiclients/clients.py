@@ -50,7 +50,7 @@ class OpenfoodfactsClient:
             try:
                 response = requests.get(self.url, params=params)
                 response.raise_for_status()
-            except requests.exceptions.Request:
+            except requests.RequestException:
                 return [] # En cas d'erreur, on retourne une liste vide
 
             data = response.json().get("products")
