@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-from apps.apiclients import normalizers  
+from apiclients import normalizers  
 
 def test_unuseful_fields_are_removed(valid_product):
     valid_product = {**valid_product, "energy_100g": 500.0}
