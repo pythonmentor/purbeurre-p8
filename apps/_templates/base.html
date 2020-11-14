@@ -7,8 +7,16 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>{% block title %}Pur Beurre{% endblock title %}</title>
+
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'dist/assets/img/favicon.ico' %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'dist/assets/img/favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'dist/assets/img/favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'dist/assets/img/favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'dist/assets/img/favicons/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'dist/assets/img/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
         {% block styles %}
         <!-- Google fonts-->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
@@ -20,12 +28,7 @@
 
         <style>
             header.masthead {
-                background: linear-gradient(
-                    to bottom,
-                    #{fade-out($brown, 0.2)} 0%,
-                    #{fade-out($brown, 0.2)} 100%
-                ),
-                {% block masthead_image %}url("{% static 'dist/assets/bg_masthead.jpg' %}");{% endblock masthead_image %}
+                {% block masthead_image %}url("{% static 'dist/assets/img/bg_masthead.jpg' %}");{% endblock masthead_image %}
             }  
         </style>
 
@@ -94,7 +97,6 @@
                     </div>
                 </div>
             </div>
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Collette et Rémy de PurBeurre</div></div>
         </footer>
         {% endblock footer %}
 
