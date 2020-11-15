@@ -32,11 +32,9 @@ class ProductManager(models.Manager):
         """
         # Rechercher le produit correspondant à product_name en base
         # de données
-        print(f"Recu: {product_name}")
         product = (
             self.filter(name__icontains=product_name).order_by('?').first()
         )
-        print(f"Trouvé: {product}")
         if not product:
             return []
 
