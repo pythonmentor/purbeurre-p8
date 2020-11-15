@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+from django.contrib.messages import constants as messages
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -168,3 +170,11 @@ MEDIA_ROOT = str(BASE_DIR / 'media')
 # Configuration for products
 PRODUCT_CLIENT_PAGE_SIZE = 500
 PRODUCT_CLIENT_NUMBER_OF_PAGES = 3
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
