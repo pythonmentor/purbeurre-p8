@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -26,10 +27,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
 
-        <style>
-            header.masthead {
-                {% block masthead_image %}url("{% static 'dist/assets/img/bg_masthead.jpg' %}");{% endblock masthead_image %}
-            }  
+        <style> 
+        header.masthead {
+            background: 
+                linear-gradient(to bottom, rgba(99, 91, 85, 0.75), rgba(99, 91, 85, 0.75)),
+                url("{% static 'dist/assets/img/bg-masthead.jpg' %}");
+        }
         </style>
 
         {% endblock styles %}
@@ -50,8 +53,8 @@
                     <ul class="navigation--menu navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item">
                             <form class="search-form" action="{% url 'products:search' %}" method="GET">
-                                {{ csrf_token }}
-                                {{ form.as_p }}
+                                {% csrf_token %}
+                                {{ search_form.as_p }}
                             </form>
                         </li>
 

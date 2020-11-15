@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}Pur Beurre | Home{% endblock title %}
 
@@ -13,9 +14,9 @@
             </div>
             <div class="col-lg-8 align-self-baseline">
                 <h2 class="text-white-75 font-weight-light mb-5">Trouvez un produit de substitution pour ceux que vous utilisez tous les jours.</h2>
-                <form class="search-form" action="{% url 'products:search' %}" method="GET">
-                    {{ csrf_token }}
-                    {{ form.as_p }}
+                <form class="search-form form-inline" action="{% url 'products:search' %}" method="get">
+                    {{ search_form|crispy }}
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
         </div>
@@ -44,7 +45,7 @@
                         <img class="about--colette--image" src="{% static 'dist/assets/img/colette.png' %}" alt="colette">
                     </div>
                     <div class="about--remy col-lg-4 mr-auto text-center">
-                        <img class="about--remy--image" src="{% static 'dist/assets/img/remy.jpg' %}" alt="rémy">
+                        <img class="about--remy--image" src="{% static 'dist/assets/img/remy.png' %}" alt="rémy">
                     </div>
                 </div>
             </div>

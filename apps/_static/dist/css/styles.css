@@ -10033,6 +10033,16 @@ hr.light {
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #C45525 !important;
 }
+#mainNav .navigation {
+  font-size: 1.2rem;
+}
+#mainNav .navigation--logo {
+  width: 50px;
+  margin: 5px;
+}
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 1.2rem;
+}
 @media (min-width: 992px) {
   #mainNav {
     box-shadow: none;
@@ -10072,15 +10082,9 @@ hr.light {
   }
 }
 
-.navigation--logo {
-  width: 50px;
-  margin: 5px;
-}
-
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10143,6 +10147,16 @@ header.masthead h1 {
 }
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+}
+
+.search-form > .form-group:first-child {
+  flex-grow: 1;
+}
+.search-form > .form-group:first-child div {
+  width: 100%;
+}
+.search-form > .form-group:first-child div input {
+  width: 100%;
 }
 
 .text-white-75 {
