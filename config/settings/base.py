@@ -167,9 +167,12 @@ STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR / 'media')
 
-# Configuration for products
+# Configuration for products dowload
 PRODUCT_CLIENT_PAGE_SIZE = 500
 PRODUCT_CLIENT_NUMBER_OF_PAGES = 3
+
+# Configuration for substitute search
+PRODUCT_MAX_SUBSTITUTES = 6
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
