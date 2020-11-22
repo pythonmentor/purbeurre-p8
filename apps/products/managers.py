@@ -42,10 +42,6 @@ class ProductManager(models.Manager):
         if not product:
             return product, []
 
-        product.image_url = product.image_url.replace(
-            "400.jpg", "full.jpg"
-        ).replace("400.png", "full.png")
-
         # On élimine de la cherche les produits qui ont déjà été mis en
         # favori par l'utilisateur comme substitut de product.
         products = self.all()
