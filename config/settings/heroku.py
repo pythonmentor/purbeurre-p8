@@ -1,10 +1,11 @@
 import os
+
 import django_heroku
 
 from .base import *
 
 # Configuration spécifique pour le déploiement Heroku
-DEBUG = False
+DEBUG = True
 
 # Configuration de l'email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -12,7 +13,7 @@ EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Configuration des fichiers statiques
 STATIC_URL = '/static/'
