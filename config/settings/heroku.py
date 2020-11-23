@@ -5,7 +5,7 @@ import django_heroku
 from .base import *
 
 # Configuration spécifique pour le déploiement Heroku
-DEBUG = True
+DEBUG = False
 
 # Configuration de l'email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
