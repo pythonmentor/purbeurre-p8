@@ -8,6 +8,7 @@ django-extensions = "*"
 pytest = "*"
 pytest-django = "*"
 pytest-mock = "*"
+pytest-cov = "*"
 
 [packages]
 django = "*"
