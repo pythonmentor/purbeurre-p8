@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def driver():
     """Fixture instanciating a webdriver.Firefox instance."""
     firefox_options = webdriver.FirefoxOptions()

@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def driver():
     """Fixture instanciating a webdriver.Chrome instance."""
     chrome_options = webdriver.ChromeOptions()
