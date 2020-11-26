@@ -57,6 +57,7 @@ LOCAL_APPS = [
     'profiles.apps.ProfilesConfig',
     'users.apps.UsersConfig',
     'categories.apps.CategoriesConfig',
+    'pagination.apps.PaginationConfig',
 ]
 
 INSTALLED_APPS = DJANGO_INSTALLED_APPS + THIRD_PARTY_APPS + LOCAL_APPS

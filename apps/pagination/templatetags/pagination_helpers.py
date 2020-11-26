@@ -18,8 +18,8 @@ def page_range(
     """Limite les pages affichées à un certain nombre de voisin autour de la
     page courrante."""
     if paginator.num_pages > 2 * neighbors + 1:
-        first_page = max(1, current_page - neighbors)
-        last_page = min(paginator.num_pages, current_page + neighbors)
+        first_page = max(1, current_page.number - neighbors)
+        last_page = min(paginator.num_pages, current_page.number + neighbors)
         return range(first_page, last_page + 1)
     return paginator.page_range
 
