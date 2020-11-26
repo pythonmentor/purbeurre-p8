@@ -37,7 +37,9 @@ class ProductManager(models.Manager):
         # Rechercher le produit correspondant à product_name en base
         # de données
         product = (
-            self.filter(name__icontains=product_name).order_by('?').first()
+            self.filter(name__icontains=product_name)
+            .order_by('-nutriscore', 'name')
+            .first()
         )
         if not product:
             return product, []

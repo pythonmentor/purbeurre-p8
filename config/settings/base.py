@@ -57,6 +57,8 @@ LOCAL_APPS = [
     'profiles.apps.ProfilesConfig',
     'users.apps.UsersConfig',
     'categories.apps.CategoriesConfig',
+    'pagination.apps.PaginationConfig',
+    'completions.apps.CompletionsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_INSTALLED_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -141,6 +143,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

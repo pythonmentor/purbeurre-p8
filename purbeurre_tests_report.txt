@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.0, pytest-6.1.2, py-1.9.0, pluggy-0.13.1
+django: settings: config.settings.testing (from ini)
+rootdir: /Users/tchappui/Dropbox/dev/gokhan-projet8, configfile: setup.cfg
+plugins: mock-3.3.1, cov-2.10.1, django-4.1.0
+collected 66 items
+
+tests/functional/chrome/test_login_user.py ..
+tests/functional/firefox/test_login_user.py ..
+tests/integration/favorites/test_views.py .................
+tests/integration/products/test_views.py ........
+tests/integration/profiles/test_views.py ....
+tests/functional/chrome/test_webdriver.py .
+tests/functional/firefox/test_webdriver.py .
+tests/integration/favorites/test_urls.py ...
+tests/integration/pages/test_urls.py ..
+tests/integration/pages/test_views.py ....
+tests/integration/products/test_urls.py ..
+tests/integration/profiles/test_urls.py .
+tests/unit/apiclients/test_clients.py ..........
+tests/unit/apiclients/test_normalizers.py .....
+tests/unit/apiclients/test_validators.py ...
+tests/unit/products/commands/test_commands.py Downloading products from openfoodfacts...
+.
+
+---------- coverage: platform darwin, python 3.9.0-final-0 -----------
+Name                                                 Stmts   Miss  Cover
+------------------------------------------------------------------------
+apps/apiclients/clients.py                              21      2    90%
+apps/apiclients/normalizers.py                          34      0   100%
+apps/apiclients/validators.py                           24      0   100%
+apps/categories/admin.py                                 5      0   100%
+apps/categories/apps.py                                  3      0   100%
+apps/categories/models.py                                8      1    88%
+apps/favorites/admin.py                                  3      0   100%
+apps/favorites/api/urls.py                               4      0   100%
+apps/favorites/api/views.py                             21      2    90%
+apps/favorites/apps.py                                   3      0   100%
+apps/favorites/forms.py                                 23      2    91%
+apps/favorites/managers.py                               4      0   100%
+apps/favorites/models.py                                13      1    92%
+apps/favorites/urls.py                                   4      0   100%
+apps/favorites/views.py                                 13      0   100%
+apps/pages/apps.py                                       3      0   100%
+apps/pages/urls.py                                       5      0   100%
+apps/pages/views.py                                      6      0   100%
+apps/products/admin.py                                   5      0   100%
+apps/products/apps.py                                    3      0   100%
+apps/products/context_processors.py                      3      0   100%
+apps/products/forms.py                                   3      0   100%
+apps/products/management/commands/load_products.py      17      0   100%
+apps/products/managers.py                               24      9    62%
+apps/products/models.py                                 21      1    95%
+apps/products/urls.py                                    5      0   100%
+apps/products/views.py                                  17      0   100%
+apps/profiles/apps.py                                    3      0   100%
+apps/profiles/urls.py                                    5      0   100%
+apps/profiles/views.py                                   5      0   100%
+apps/users/admin.py                                     11      0   100%
+apps/users/apps.py                                       3      0   100%
+apps/users/forms.py                                     10      0   100%
+apps/users/models.py                                     3      0   100%
+------------------------------------------------------------------------
+TOTAL                                                  335     18    95%
+
+
+============================= 66 passed in 32.59s ==============================

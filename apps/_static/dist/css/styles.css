@@ -10172,6 +10172,10 @@ header.masthead h1 {
   width: 100%;
 }
 
+.ui-autocomplete {
+  z-index: 1050;
+}
+
 .substitute {
   padding-bottom: 3rem;
 }
