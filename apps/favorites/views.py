@@ -23,4 +23,4 @@ class FavoriteListView(LoginRequiredMixin, ListView):
         """Filtre les objets récupérés pour obtenir uniquement ceux qui
         appartiennent à l'utilisateur."""
         queryset = super().get_queryset()
-        return queryset.filter(user=self.request.user)
+        return list(queryset.filter(user=self.request.user))
