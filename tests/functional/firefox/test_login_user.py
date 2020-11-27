@@ -4,7 +4,10 @@ from users.models import User
 
 
 @pytest.fixture
-def user(transactional_db):
+def user(transactional_db, settings):
+    # make email verification optional (default allauth value)
+    settings.ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
     yield User.objects.create_user(
         "testuser", "testuser@oc.com", "asdnFSdh7sd8Fa8f"
     )
