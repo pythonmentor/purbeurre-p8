@@ -23,5 +23,7 @@ gunicorn = "*"
 django-heroku = "*"
 install = "*"
 sentry-sdk = "*"
+dj-database-url = "*"
+dj-email-url = "*"
 
 [requires]

@@ -146,6 +146,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'hello@purbeurre.com'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

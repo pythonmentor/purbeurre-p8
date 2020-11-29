@@ -2,8 +2,32 @@ import os
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import dj_database_url
+import dj_email_url
 
 from .base import *
+
+# Debug should be False in production
+DEBUG = False
+
+# Settings of the production database
+DATABASES['default'] = dj_database_url.config(
+    default=os.environ['DATABASE_URL']
+)
+
+# Configuration of the production
+email_config = dj_email_url.config()
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = email_config['EMAIL_HOST']
+EMAIL_PORT = email_config['EMAIL_PORT']
+EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS = email_config['EMAIL_USE_TLS']
+EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
 
 
 # Configuration for products dowload
