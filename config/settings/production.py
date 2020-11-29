@@ -9,7 +9,7 @@ import dj_email_url
 from .base import *
 
 # Debug should be False in production
-DEBUG = True
+DEBUG = False
 
 # Host allowed to access the web application
 ALLOWED_HOSTS = [
