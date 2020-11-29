@@ -1,5 +1,3 @@
-import logging
-
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
 
@@ -21,7 +19,6 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS('Downloading products from openfoodfacts...')
         )
-        logging.info('Downloading products from openfoodfacts...')
 
         products = client.get_products_by_popularity(
             page_size=settings.PRODUCT_CLIENT_PAGE_SIZE,

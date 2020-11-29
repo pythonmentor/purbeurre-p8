@@ -1,5 +1,4 @@
 import os
-import logging
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -10,7 +9,7 @@ import dj_email_url
 from .base import *
 
 # Debug should be False in production
-DEBUG = False
+DEBUG = True
 
 # Settings of the production database
 DATABASES['default'] = dj_database_url.config(
@@ -33,17 +32,12 @@ EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
 
 
 # Configuration for products dowload
-PRODUCT_CLIENT_PAGE_SIZE = 500
+PRODUCT_CLIENT_PAGE_SIZE = 100
 PRODUCT_CLIENT_NUMBER_OF_PAGES = 3
-
-# Sentry configuration
-sentry_logging = LoggingIntegration(
-    event_level=logging.INFO,  # Send errors as events
-)
 
 sentry_sdk.init(
     dsn=os.getenv('SENTRY_DSN'),
-    integrations=[sentry_logging, DjangoIntegration()],
+    integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
     # If you wish to associate users to errors (assuming you are using
     # django.contrib.auth) you may enable sending PII data.
