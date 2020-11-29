@@ -33,8 +33,8 @@ EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
 
 
 # Configuration for products dowload
-PRODUCT_CLIENT_PAGE_SIZE = 1000
-PRODUCT_CLIENT_NUMBER_OF_PAGES = 10
+PRODUCT_CLIENT_PAGE_SIZE = 500
+PRODUCT_CLIENT_NUMBER_OF_PAGES = 3
 
 # Sentry configuration
 sentry_logging = LoggingIntegration(
