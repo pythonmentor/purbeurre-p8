@@ -176,6 +176,10 @@ MEDIA_ROOT = str(BASE_DIR / 'media')
 # Configuration for substitute search
 PRODUCT_MAX_SUBSTITUTES = 6
 
+# Configuration for products dowload
+PRODUCT_CLIENT_PAGE_SIZE = 500
+PRODUCT_CLIENT_NUMBER_OF_PAGES = 3
+
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert-info',
