@@ -21,6 +21,7 @@ werkzeug = "*"
 django-allauth = "*"
 gunicorn = "*"
 django-heroku = "*"
-
+install = "*"
+sentry-sdk = "*"
 
 [requires]
