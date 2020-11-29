@@ -23,6 +23,43 @@ class ProductManager(models.Manager):
                 )
                 product.categories.add(category)
 
+    def update_from_openfoodfacts(self, products):
+        """update the data for received product and category data as model
+        instances."""
+        for product_info in products:
+            # Recover info about categories
+            categories = product_info.pop("categories")
+
+            # Search a product with same id in database
+            try:
+                product = self.get(id=product_info['id'])
+            except self.model.DoesNotExist:
+                # if product does not exist in database, we skip it
+                continue
+
+            # Update fields
+            product.name = product_info['name']
+            product.description = product_info['description']
+            product.nutriscore = product_info['nutriscore']
+            product.url = product_info['url']
+            product.image_url = product_info['image_url']
+            product.image_nutrition_url = product_info['image_nutrition_url']
+            product.save()
+
+            # Clear categories
+            product.categories.clear()
+
+            # Creation of categories and association with the current product
+            for category_name in categories:
+                category, _ = Category.objects.get_or_create(
+                    name=category_name
+                )
+                product.categories.add(category)
+
+            # Remove categories associated with no product
+            unused_categories = Category.objects.filter(products__isnull=True)
+            unused_categories.delete()
+
     def find_substitutes(self, product_name, user=None):
         """Recherche des substituts à product_name.
 
