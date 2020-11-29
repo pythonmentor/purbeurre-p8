@@ -25,5 +25,6 @@ install = "*"
 sentry-sdk = "*"
 dj-database-url = "*"
 dj-email-url = "*"
+psycopg2 = "*"
 
 [requires]
