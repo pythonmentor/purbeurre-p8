@@ -21,8 +21,7 @@ class Command(BaseCommand):
         self.stdout.write(
             self.style.SUCCESS('Updating products from openfoodfacts...')
         )
-        logging.info('info level: Updating products from openfoodfacts...')
-        logging.error('error level: Updating products from openfoodfacts...')
+        logging.info('Updating products from openfoodfacts...')
 
         products = client.get_products_by_popularity(
             page_size=settings.PRODUCT_CLIENT_PAGE_SIZE,

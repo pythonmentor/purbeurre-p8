@@ -38,8 +38,7 @@ PRODUCT_CLIENT_NUMBER_OF_PAGES = 10
 
 # Sentry configuration
 sentry_logging = LoggingIntegration(
-    level=logging.INFO,  # Capture info and above as breadcrumbs
-    event_level=logging.ERROR,  # Send errors as events
+    event_level=logging.INFO,  # Send errors as events
 )
 
 sentry_sdk.init(
