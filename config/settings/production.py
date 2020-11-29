@@ -1,7 +1,9 @@
 import os
+import logging
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
 import dj_database_url
 import dj_email_url
 
@@ -35,9 +37,14 @@ PRODUCT_CLIENT_PAGE_SIZE = 1000
 PRODUCT_CLIENT_NUMBER_OF_PAGES = 10
 
 # Sentry configuration
+sentry_logging = LoggingIntegration(
+    level=logging.INFO,  # Capture info and above as breadcrumbs
+    event_level=logging.ERROR,  # Send errors as events
+)
+
 sentry_sdk.init(
     dsn=os.getenv('SENTRY_DSN'),
-    integrations=[DjangoIntegration()],
+    integrations=[sentry_logging, DjangoIntegration()],
     traces_sample_rate=1.0,
     # If you wish to associate users to errors (assuming you are using
     # django.contrib.auth) you may enable sending PII data.
