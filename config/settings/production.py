@@ -11,6 +11,11 @@ from .base import *
 # Debug should be False in production
 DEBUG = True
 
+# Host allowed to access the web application
+ALLOWED_HOSTS = [
+    'purbeurre.sangoku.org',
+]
+
 # Settings of the production database
 DATABASES['default'] = dj_database_url.config(
     default=os.environ['DATABASE_URL']
