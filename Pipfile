@@ -20,7 +20,7 @@ django-crispy-forms = "*"
 werkzeug = "*"
 django-allauth = "*"
 gunicorn = "*"
-django-heroku = "*"
+django-heroku = {version = "*", markers="'-aws' in platform_release"}
 install = "*"
 sentry-sdk = "*"
 dj-database-url = "*"
