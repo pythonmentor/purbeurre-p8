@@ -11,7 +11,6 @@ addons:
 branches:
   only:
     - staging
-    - production
     
 install:
   - pip install pipenv
