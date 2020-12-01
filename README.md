@@ -10,15 +10,6 @@ The Pur Beurre application was developed using Python 3.8, Django, Boostrap4 web
 
 To install the dependencies, the user will need to install the `pipenv` package using the `python3 -m pip install pipenv`
 
-## Installation
-
-The application can be installed by following the following steps:
-
-1. Download the project from https://github.com/gokujj/projet8
-2. Go to the project directory with the terminal
-3. Install dependencies using the `pipenv install`
-4. For launch app first start virtual environement `pipenv shell`
-5. Current local database is empty for feed it `python manage.py makemigrations ` and `python manage.py migrate`
 
 
 
