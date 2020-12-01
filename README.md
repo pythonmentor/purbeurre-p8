@@ -20,6 +20,6 @@ The application can be installed by following the following steps:
 4. For launch app first start virtual environement `pipenv shell`
 5. Current local database is empty for feed it `python manage.py makemigrations ` and `python manage.py migrate`
 6. Load products from OpenFoodFacts with `python manage.py load_products`
-7. Start app with `python manage.py runserver` and you can follow the instructions.
+
 
 
